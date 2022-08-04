@@ -1,5 +1,4 @@
 
-// ------ Seletores HTML --------
 const addressForm = document.querySelector('#address-form');
 const cepInput = document.querySelector('#cep');
 const enderecoInput = document.querySelector('#endereco');
@@ -8,7 +7,6 @@ const bairroInput = document.querySelector('#bairro');
 const cidadeInput = document.querySelector('#cidade');
 const estadoInput = document.querySelector('#estado');
 
-// --- Conferir 8 números
 
 cepInput.addEventListener("keyup", (e) => {
     const inputValue = e.target.value;
@@ -19,7 +17,7 @@ cepInput.addEventListener("keyup", (e) => {
     }
 });
 
-// ----- Consultar API -------
+
 const getAddress = async (cep) => {
     const apiUrl = `https://viacep.com.br/ws/${cep}/json/`;
 
@@ -27,7 +25,6 @@ const getAddress = async (cep) => {
 
     const data = await response.json();
 
-    // ---- Preencher os campos --------
     enderecoInput.value = data.logradouro;
     bairroInput.value = data.bairro;
     cidadeInput.value = data.localidade;
